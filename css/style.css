@@ -1,0 +1,179 @@
+/*
+    GENERIC
+ */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #f0f0f0 !important;
+	overflow: hidden;
+	width: 1080px;
+}
+
+h1.title {
+    font-size: 80px;
+    text-align: center;
+    margin: 128px;
+}
+
+
+
+
+
+/*
+    HEADER COMPONENT
+ */
+
+#header {
+	height: 150px;
+	background: #ffffff;
+}
+
+#logo  {
+    margin: 40px 40px 40px 50px;
+    height: 70px;
+}
+
+#clock {
+	font-size: 60px;
+	float: right;
+    margin: 25px 55px 25px 25px;
+}
+
+
+
+
+
+/*
+    SCHEDULE COMPONENT
+ */
+
+#schedule {
+	background: #ffffff;
+}
+
+#schedule .title-container {
+	height: 150px;
+}
+
+#schedule .title {
+	font-size: 50px;
+	margin-top: 40px;
+	margin-left: 60px;
+	float: left;
+}
+
+#schedule .date {
+	font-size: 50px;
+	margin-top: 40px;
+	margin-right: 60px;
+	float: right;
+}
+
+#time-display {
+    text-align: center;
+    transform: translateX(40px);
+    font-size: 30px;
+}
+
+.equipment {
+    font-size: 30px;
+    margin-right: 15px;
+    float: right;
+}
+
+#time-display .col, #schedule #time-display.row {
+    border: none;
+}
+
+#schedule .row {
+    margin: 0;
+    height: 60px;
+}
+
+.col.first {
+    border-left: solid 3px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.col {
+    height: inherit;
+    border-right: solid 3px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+
+
+
+/*
+    BOOKING COMPONENT
+ */
+
+.booking {
+	position: absolute;
+	overflow: hidden;
+	text-align: left;
+    height: 60px;
+}
+
+.booking .author {
+	color: #ffffff;
+	font-size: 25px;
+	margin: 5px;
+}
+
+
+
+
+
+/*
+    FOOTER COMPONENT
+ */
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	height: 150px;
+	width: 1080px;
+	background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	overflow: hidden;
+}
+.footer .motd {
+	position: relative;
+	font-size: 40px;
+	margin: 20px;
+	text-align: center;
+}
+
+
+
+
+
+/*
+    TIME BAR COMPONENT
+ */
+
+.time-bar {
+	position: absolute;
+	width: 1px;
+	border-left: 5px dotted #4B0082;
+	z-index: 1;
+}
+
+.time-bar .circle {
+	position: inherit;
+	border-radius: 50%;
+	float: left;
+	width: 20px;
+	height: 20px;
+	border: 4px solid #4B0082;
+	margin-left: -12px;
+	margin-top: -20px;
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="../site.webmanifest" rel="manifest">
+    <link href="../icon.png" rel="apple-touch-icon">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/boilerplate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/util.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Titillium+Web:300,400,600" rel="stylesheet">
+
+    <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+  your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+
+
+<div id="app">
+    <app/>
+    {{msg}}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- Add your site or application content here -->
+<script src="../js/vendor/modernizr-3.7.1.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga = function () {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+</script>
+<script async defer src="https://www.google-analytics.com/analytics.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+
+<!-- Components -->
+<script src="components/MainHeader.js"></script>
+<script src="components/App.js"></script>
+<script src="components/Schedule.js"></script>
+<script src="components/Booking.js"></script>
+<script src="components/MainFooter.js"></script>
+<script src="components/Timebar.js"></script>
+
+<script type="module">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: "Hello World!"
+        },
+        components: [
+            'app',
+            'main-header',
+            'schedule',
+            'booking',
+            'main-footer'
+        ]
+    });
+</script>
+
+</body>
+</html>
