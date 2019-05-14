@@ -29,47 +29,36 @@ Vue.component('app', {
                 "Ritplatta 1",
                 "Lektion här"
                 ],
-                bookings: [
-                    {
-                        "name": "Tor Eriksson",
-                        "equipment": "Dator 2",
-                        "start": 50,
-                        "end": 100
-                    },
-                    {
-                        "name": "Emil Edberg",
-                        "equipment": "Dator 2",
-                        "start": 120,
-                        "end": 200
-                    },
-                    {
-                        "name": "Elias Renman",
-                        "equipment": "Dator 3",
-                        "start": 120,
-                        "end": 200
-                    },
-                    {
-                        "name": "Emil Edberg",
-                        "equipment": "Dator 2",
-                        "start": 260,
-                        "end": 440
-                    },
-                    {
-                        "name": "Elias Renman",
-                        "equipment": "Dator 3",
-                        "start": 270,
-                        "end": 440
-                    },
-                    {
-                        "name": "Rasmus Mattas",
-                        "equipment": "Dator 1",
-                        "start": 260,
-                        "end": 440
-                    }
-                ]
+                bookings: [{"name":"Emil Edberg","equipment":"Dator 2","start":120,"end":200}]
             }
         }
+    },
+
+    methods: {
+        updateData() {
+            var restUrl = "http://makerspace.umea-ntig.se/api/booking";
+
+            var other = this;
+            httpGetAsync(restUrl, function (input) {
+                other.data = JSON.parse(input);
+            });
+        }
+    },
+
+    mounted() {
+        setInterval(this.updateData, 1000);
     }
 });
 
 
+// Async http GET request function
+// Found on stackoverflow, thanks <3
+function httpGetAsync(url, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    };
+    xmlHttp.open("GET", url, true); // true for asynchronous
+    xmlHttp.send(null);
+}

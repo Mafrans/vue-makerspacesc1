@@ -15,18 +15,16 @@ Vue.component('schedule', {
                     </div>
                 </div>
                 <time-bar :magic="magic" />
-                <div v-for="(equipment, index) in data.equipment" class="row">
+                <div v-for="(equipment, index) in data.equipment" :key="index" class="row">
                     <div class="col-3">
                         <p class="soleto-light equipment">{{equipment}}</p>
                     </div>
                     <div v-for="i in 8" :class="{'col':true, 'granitegray-fill':index%2==0, first:i==1}"></div>
                     
-                    <booking :magic="magic" :name="booking.name" :start="booking.start" :end="booking.end" v-for="booking in data.bookings" v-if="booking.equipment == equipment"></booking>
+                    <booking :magic="magic" :name="booking.name" :start="booking.start" :end="booking.end" v-for="booking in data.bookings" :key="getAsciiValue(booking.equipment) * booking.start" v-if="booking.equipment == equipment"></booking>
                 </div>
             </div>
-            
         </div>
-        
     `,
 
     props: [
@@ -53,6 +51,14 @@ Vue.component('schedule', {
             var date = new Date();
 
             this.date = date.getDate() + " " + months[date.getMonth()].toUpperCase();
+        },
+
+        getAsciiValue(string) {
+            var out = 0;
+            for(var i = 0; i < string.length; i++) {
+                out += string.charCodeAt(i);
+            }
+            return out;
         }
     },
 
