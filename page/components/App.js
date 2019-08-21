@@ -29,7 +29,7 @@ Vue.component('app', {
                 "Ritplatta 1",
                 "Lektion här"
                 ],
-                bookings: [{"name":"Emil Edberg","equipment":"Dator 2","start":120,"end":200}]
+                bookings: [{"name":"Allan Bäackman","equipment":"Lektion här","start":0,"end":480}]
             }
         }
     },
